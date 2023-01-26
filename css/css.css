@@ -1,0 +1,80 @@
+td {
+    padding: 0 50px;
+}
+
+td img {
+    height: 75%;
+    width: 75%;
+}
+
+td img#andalucia {
+    height: 95%;
+    width: 95%;
+}
+
+/*.carta a {
+    padding-right: 50%;
+}*/
+
+.roww {
+    display: flex;
+    gap: 1em;
+}
+
+.roww>* {
+  flex: 1;
+}
+
+.carta {
+  transition: 2s;
+  transform: translateY(100%);
+  /*border: 2px solid red;*/
+  opacity: 0;
+}
+
+/** optional sibling delay */
+
+.roww .carta:nth-of-type(2) {
+  transition-delay: 0.5s;
+}
+
+.roww .carta:nth-of-type(3) {
+  transition-delay: 0.75s;
+}
+
+.roww .carta:nth-of-type(4) {
+  transition-delay: 1s;
+}
+
+.roww .carta:nth-of-type(5) {
+  transition-delay: 1.25s;
+}
+
+.roww .carta:nth-of-type(6) {
+  transition-delay: 1.5s;
+}
+
+.inViewPort {
+  opacity: 1;
+  transform: translateY(0%);
+  border: 0px;
+}
+
+img {
+  /*aspect-ratio: 2/1;*/
+  display: block;
+  /*background-color: #ccc;*/
+  /*width: 100%;
+  max-width: 100%;*/
+  object-fit: cover;
+  /*object-position: 50% 50%;*/
+}
+
+table img:hover {
+  height: 80%;
+  width: 80%;
+}
+
+table * {
+  border: 0px;
+}
