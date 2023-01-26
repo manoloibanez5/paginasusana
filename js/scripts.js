@@ -51,4 +51,34 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+
+    // Script del slow loading
+    const options = {
+        rootMargin: "0px",
+        threshold: 0.1
+    };
+      
+    const inViewPortObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let target = entry.target;
+          let img = target.querySelector('img');
+          let dataSrc = img.getAttribute('data-src');
+          img.src = dataSrc;
+          target.classList.add('inViewPort');
+        }
+      });
+    }, options);
+      
+    const cards = document.querySelectorAll('.carta');
+    cards.forEach(function(carta, i) {
+      inViewPortObserver.observe(carta);
+    })
+
+    //Script popover
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
 });
