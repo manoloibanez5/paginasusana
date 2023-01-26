@@ -81,4 +81,9 @@ window.addEventListener('DOMContentLoaded', event => {
         return new bootstrap.Popover(popoverTriggerEl)
     })
 
+    $('[data-toggle="popover-monumento"]').popover({
+        placement : 'right',
+        trigger : 'hover'
+    });
+
 });
